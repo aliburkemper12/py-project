@@ -14,7 +14,7 @@ is until first break, second break, clock out, or clock in for a desired shift
 def do_time_check(shift):
     # print shift name
     shift_name = get_shift_name(shift)
-    print(f'------------------', shift_name ,'Shift ------------------\n')
+    print('------------------', shift_name ,'Shift ------------------\n')
     
     # get localized time
     x = pytz.timezone("America/Chicago")
