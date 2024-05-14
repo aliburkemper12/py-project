@@ -90,8 +90,8 @@ def do_time_check(shift):
             print_minutes(var_minutes, var, 'clock out')
             
     # after lunch before clock out during end hour
-    elif time.hour == end_hour and time.minutes < 30:
-        var_minutes = time.minute
+    elif time.hour == end_hour and time.minute < 30:
+        var_minutes = 30 - time.minute
         print('It is', var_minutes ,'minutes until clock out')
         
     # outside of work hours
