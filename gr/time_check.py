@@ -3,9 +3,10 @@ import pytz
 
 '''
 program that gets the current local time and tells the user how long it 
-is until first break, second break, clock out, or clock in
+is until first break, second break, clock out, or clock in for a desired shift
 
 '''
+
 def do_time_check(shift):
     # print shift name
     shift_name = get_shift_name(shift)
@@ -118,10 +119,10 @@ def do_time_check(shift):
     # outside of work hours
     else:
         during_work = False
-        print('You are not currently scheduled!')
+        print('This shift has not yet started')
         # if it is before midnight
         if time.hour >= start_hour and time.hour < 0:
-            # add 6 hours and 30 minutes onto difference between curr and midnight
+            # add start time to difference between curr and midnight
             var_hours = 24 - time.hour + start_hour
             var_minutes = time.minutes
             
@@ -148,8 +149,8 @@ def do_time_check(shift):
                     print('It is', var_hours ,'hours and', var_minutes ,'minutes until clock in')
                 
         # between midnight and clock in
-        if time.hour >= 0 and time.hour < start_hour:
-            var_hours = time.hour
+        if time.hour >= 0 and time.hour <= start_hour:
+            var_hours = start_hour - time.hour
             var_minutes = time.minute
             
             # standardize
@@ -217,6 +218,7 @@ def get_shift_name(shift):
 def set_variables(shift):
     # set hour variables according to the shift
     global start_hour, first_break_hour, second_break_hour, end_hour, first_break_minute, second_break_minute
+    
     if shift == '1':
         start_hour = 6
         end_hour = 14
