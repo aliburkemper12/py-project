@@ -1,6 +1,10 @@
 from datetime import datetime
 import pytz
 
+# from flask import Flask
+
+# app = Flask(__name__)
+
 '''
 program that gets the current local time and tells the user how long it 
 is until first break, second break, clock out, or clock in for a desired shift
@@ -10,7 +14,7 @@ is until first break, second break, clock out, or clock in for a desired shift
 def do_time_check(shift):
     # print shift name
     shift_name = get_shift_name(shift)
-    print('------------------', shift_name ,'Shift ------------------\n')
+    print(f'------------------', shift_name ,'Shift ------------------\n')
     
     # get localized time
     x = pytz.timezone("America/Chicago")
@@ -87,12 +91,12 @@ def do_time_check(shift):
                 else:
                     print('It is', var ,'hours and', var_minutes ,'minutes until lunch')
                 
-    elif time.hour == second_break_hour and time.minutes < 36:
+    elif time.hour == second_break_hour and time.minute < 36:
         var_minutes = 36 - time.minute
         print('It is', var_minutes ,'minutes until lunch')
             
     # it is currently lunch time
-    elif time.hour == second_break_hour and time.minutes >= 36:
+    elif time.hour == second_break_hour and time.minute >= 36:
         print('It is lunch time :)')
         
     # after lunch before clock out
