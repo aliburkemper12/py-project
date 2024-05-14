@@ -1,6 +1,7 @@
 from datetime import datetime
 import pytz
 
+# need to fix if it is the right start hour it isn't the start of shift
 
 '''
 program that gets the current local time and tells the user how long it 
@@ -108,10 +109,10 @@ def do_time_check(shift):
         during_work = False
         print('This shift has not yet started')
         # if it is before midnight
-        if time.hour >= start_hour and time.hour < 0:
+        if time.hour >= start_hour:
             # add start time to difference between curr and midnight
             var_hours = 24 - time.hour + start_hour
-            var_minutes = time.minutes
+            var_minutes = time.minute
             
             # standardize
             if var_minutes > 30:
