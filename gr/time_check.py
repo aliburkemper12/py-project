@@ -59,10 +59,16 @@ def do_time_check(shift):
                 var -= 1
                 
             if var_minutes == 1:
-                print('It is', var ,'hours and', var_minutes ,'minute until lunch')
+                if var == 0:
+                    print('It is', var_minutes, 'minutes until lunch')
+                else:
+                    print('It is', var ,'hours and', var_minutes ,'minutes until lunch')
 
             else:
-                print('It is', var ,'hours and', var_minutes ,'minutes until lunch')
+                if var == 0:
+                    print('It is', var_minutes, 'minutes until lunch')
+                else:
+                    print('It is', var ,'hours and', var_minutes ,'minutes until lunch')
             
         # no need to standardize 
         else:
@@ -70,10 +76,16 @@ def do_time_check(shift):
             var_minutes = 36 - time.minute
             
             if var_minutes == 1:
-                print('It is', var ,'hours and', var_minutes ,'minute until lunch')
+                if var == 0:
+                    print('It is', var_minutes, 'minutes until lunch')
+                else:
+                    print('It is', var ,'hours and', var_minutes ,'minutes until lunch')
 
             else:
-                print('It is', var ,'hours and', var_minutes ,'minutes until lunch')
+                if var == 0:
+                    print('It is', var_minutes, 'minutes until lunch')
+                else:
+                    print('It is', var ,'hours and', var_minutes ,'minutes until lunch')
                 
     elif time.hour == second_break_hour and time.minutes < 36:
         var_minutes = 36 - time.minute
@@ -95,10 +107,16 @@ def do_time_check(shift):
                 var -= 1
                 
             if var_minutes == 1:
-                print('It is', var ,'hours and', var_minutes ,'minute until clock out')
+                if var == 0:
+                    print('It is', var_minutes, 'minutes until clock out')
+                else:
+                    print('It is', var ,'hours and', var_minutes ,'minutes until clock out')
 
             else:
-                print('It is', var ,'hours and', var_minutes ,'minutes until clock out')
+                if var == 0:
+                    print('It is', var_minutes, 'minutes until clock out')
+                else:
+                    print('It is', var ,'hours and', var_minutes ,'minutes until clock out')
             
         # no need to standardize 
         else:
@@ -106,10 +124,16 @@ def do_time_check(shift):
             var_minutes = 30 - time.minute
             
             if var_minutes == 1:
-                print('It is', var ,'hours and', var_minutes ,'minute until clock out')
+                if var == 0:
+                    print('It is', var_minutes, 'minutes until clock out')
+                else:
+                    print('It is', var ,'hours and', var_minutes ,'minutes until clock out')
 
             else:
-                print('It is', var ,'hours and', var_minutes ,'minutes until clock out')
+                if var == 0:
+                    print('It is', var_minutes, 'minutes until clock out')
+                else:
+                    print('It is', var ,'hours and', var_minutes ,'minutes until clock out')
             
     # after lunch before clock out during end hour
     elif time.hour == end_hour and time.minutes < 30:
@@ -135,18 +159,30 @@ def do_time_check(shift):
                     var_hours -= 1
                     
                 if var_minutes == 1:
-                    print('It is', var_hours ,'hours and', var_minutes ,'minute until clock in')
+                    if var_hours == 0:
+                        print('It is', var_minutes, 'minutes until clock in')
+                    else:
+                        print('It is', var_hours ,'hours and', var_minutes ,'minutes until clock')
 
                 else:
-                    print('It is', var_hours ,'hours and', var_minutes ,'minutes until clock in')
+                    if var_hours == 0:
+                        print('It is', var_minutes, 'minutes until clock in')
+                    else:
+                        print('It is', var_hours ,'hours and', var_minutes ,'minutes until clock')
             else:
                 var_minutes = 30 - var_minutes
                 
                 if var_minutes == 1:
-                    print('It is', var_hours ,'hours and', var_minutes ,'minute until clock in')
+                    if var == 0:
+                        print('It is', var_minutes, 'minutes until clock in')
+                    else:
+                        print('It is', var_hours ,'hours and', var_minutes ,'minutes until clock')
 
                 else:
-                    print('It is', var_hours ,'hours and', var_minutes ,'minutes until clock in')
+                    if var_hours == 0:
+                        print('It is', var_minutes, 'minutes until clock in')
+                    else:
+                        print('It is', var_hours ,'hours and', var_minutes ,'minutes until clock')
                 
         # between midnight and clock in
         if time.hour >= 0 and time.hour <= start_hour:
@@ -162,18 +198,30 @@ def do_time_check(shift):
                     var_hours -= 1
                     
                 if var_minutes == 1:
-                    print('It is', var_hours ,'hours and', var_minutes ,'minute until clock in')
+                    if var_hours == 0:
+                        print('It is', var_minutes, 'minutes until clock in')
+                    else:
+                        print('It is', var_hours ,'hours and', var_minutes ,'minutes until clock')
 
                 else:
-                    print('It is', var_hours ,'hours and', var_minutes ,'minutes until clock in')
+                    if var_hours == 0:
+                        print('It is', var_minutes, 'minutes until clock in')
+                    else:
+                        print('It is', var_hours ,'hours and', var_minutes ,'minutes until clock')
             else:
                 var_minutes = 30 - var_minutes
                 
                 if var_minutes == 1:
-                    print('It is', var_hours ,'hours and', var_minutes ,'minute until clock in')
+                    if var_hours == 0:
+                        print('It is', var_minutes, 'minutes until clock in')
+                    else:
+                        print('It is', var_hours ,'hours and', var_minutes ,'minutes until clock')
 
                 else:
-                    print('It is', var_hours ,'hours and', var_minutes ,'minutes until clock in')
+                    if var_hours == 0:
+                        print('It is', var_minutes, 'minutes until clock in')
+                    else:
+                        print('It is', var_hours ,'hours and', var_minutes ,'minutes until clock')
                 
     # percentage of work day done
     if during_work:
