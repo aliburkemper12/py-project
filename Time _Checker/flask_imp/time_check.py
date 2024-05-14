@@ -1,13 +1,22 @@
 from datetime import datetime
 import pytz
 
-# from flask import Flask
-
-# app = Flask(__name__)
 
 '''
 program that gets the current local time and tells the user how long it 
 is until first break, second break, clock out, or clock in for a desired shift
+
+1st shift: 6:30 - 2:30
+    first break: 8:54 - 9:10
+    second break: 11:36 - 12:00
+    
+2nd shift: 2:30 - 10:30
+    first break: 4:54 - 5:10
+    second break: 7:36 - 8:00
+    
+3rd shift: 10:30 - 6:30
+    first break: 12:54 - 1:10
+    second break: 3:36 - 4:00
 
 '''
 
