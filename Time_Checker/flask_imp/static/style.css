@@ -1,5 +1,6 @@
 body {
     text-align: center;
+    font-weight: 3px;
     background-color: #171523;
     color: CanvasText;
     color-scheme: light dark;
@@ -12,15 +13,30 @@ h1 {
 }
 h3 {
     font-size: 30px;
+    color: #7260d5;
 }
 p {
     font-size: 25px;
 }
 h4 {
-    font-size: 40px;
+    font-size: 35px;
+    padding-top: 30px;
+}
+.check {
+    color: #d74242;
 }
 button {
     height: auto;
+    background-color: #a6acaa; 
+    border: none;
+    color: #171523;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 5px;
 }
 #more {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -28,13 +44,38 @@ button {
 }
 #shift {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    color: #171523;
+    border: none;
+    border-radius: 5px;
     width: 200px;
     height: 20px;
-    margin-bottom: 50px;
+    background-color: #a6acaa;
+    padding: 5px 10px;
+    /* margin-bottom: 50px; */
+}
+::placeholder {
+    color: #171523;
+}
+.time {
+    padding-top: 30px;
+    font-size: 50px;
 }
 .container {
     height: 650px;
     position: relative;
+    background-color: #171523;
+    box-shadow: 3px 3px 20px #656177;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    margin-left: 300px;
+    margin-right: 300px;
+    padding-bottom: 70px;
+    transition: 0.5s;
+    border-radius: 10px;
+}
+.container:hover {
+    transform: scale(1.03);
 }
 .center {
     margin: 0;
@@ -44,4 +85,3 @@ button {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
-

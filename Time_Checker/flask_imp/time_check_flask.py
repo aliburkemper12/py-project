@@ -1,5 +1,6 @@
 from datetime import datetime
 import pytz
+from flask import Flask, render_template, request
 
 '''
 program that gets the current local time and tells the user how long it 
@@ -108,11 +109,11 @@ def do_time_check(shift):
                     var_minutes = 60 + var_minutes
                     var_hours -= 1
                     
-                data = print_minutes(var_minutes, var_hours, 'clock in')
+                percent = print_minutes(var_minutes, var_hours, 'clock in')
             else:
                 var_minutes = 30 - var_minutes
                 
-                data = print_minutes(var_minutes, var_hours, 'clock in')
+                percent = print_minutes(var_minutes, var_hours, 'clock in')
                 
         # between midnight and clock in
         if time.hour >= 0 and time.hour <= start_hour:
@@ -127,11 +128,11 @@ def do_time_check(shift):
                     var_minutes = 60 + var_minutes
                     var_hours -= 1
                     
-                data = print_minutes(var_minutes, var_hours, 'clock in')
+                percent = print_minutes(var_minutes, var_hours, 'clock in')
             else:
                 var_minutes = 30 - var_minutes
                 
-                data = print_minutes(var_minutes, var_hours, 'clock in')
+                percent =  print_minutes(var_minutes, var_hours, 'clock in')
                 
     # percentage of work day done
     if during_work:
@@ -177,8 +178,7 @@ def get_shift_name(shift):
         return 'Third'
     
     else:
-        print('Invalid shift. Please run again')
-        quit()
+        return render_template("error.html")
     
 # sets the appropriate hours depending on inputted shift
 def set_variables(shift):

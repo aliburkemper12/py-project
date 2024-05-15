@@ -9,16 +9,18 @@
 <div class = "container">
     <div class = "center">
         <body>
-            <h1>Time <a class = "check">Check:</a></h1>
+            <h1>Time Check:</h1>
             <h3>To see time information for a shift, type:</h3>
                 <p>1 - for first shift</p>
                 <p>2 - for second shift</p>
                 <p>3 - for third shift</p>
             <h4>
                 <form action="{{ url_for("index")}}" method="post">
+                <label for="shiftname">Shift:</label>
                 <input type="text" id="shift" name="fname" placeholder="Enter Shift">
                 <button type="submit" id="more">Enter</button>
             </h4>
+            <h2>Invalid shift. Please try again.</h2>
         <!-- this section can be replaced by a child document -->  
         {% block body %}
         
