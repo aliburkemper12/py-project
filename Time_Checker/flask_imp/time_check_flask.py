@@ -7,6 +7,7 @@ is until first break, second break, clock out, or clock in for a desired shift
 
 '''
 
+# does the logic for getting the time check
 def do_time_check(shift):
     data = ''
     percent = ''
@@ -48,13 +49,13 @@ def do_time_check(shift):
                 var_minutes = 60 + var_minutes
                 var -= 1
                 
-            data = print_minutes(var_minutes, var, 'until lunch')
+            data = print_minutes(var_minutes, var, 'lunch')
             
         # no need to standardize 
         else:
             var = second_break_hour - time.hour
             var_minutes = 36 - time.minute
-            data = print_minutes(var_minutes, var, 'until lunch')
+            data = print_minutes(var_minutes, var, 'lunch')
                 
     elif time.hour == second_break_hour and time.minute < 36:
         var_minutes = 36 - time.minute

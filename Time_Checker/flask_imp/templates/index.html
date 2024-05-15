@@ -3,30 +3,35 @@
  
 <head>
     <title>TimeCheck</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
 </head>
- 
-<body>
-    <h2>Time Check:</h2>
-    <h3>To see time information for a shift, type:</h3>
-        <p>1 - for first shift</p>
-        <p>2 - for second shift</p>
-        <p>3 - for third shift</p>
-    <h4>
-        <form action="{{ url_for("index")}}" method="post">
-        <label for="shiftname">Shift:</label>
-        <input type="text" id="shiftname" name="fname" placeholder="Enter Shift">
-        <button type="submit">Enter</button>
-    </h4>
- <!-- this section can be replaced by a child document -->  
-{% block body %}
- 
- 
-<p>{{ the_body }}</p>
- 
- 
-{% endblock %}
- 
- 
-</body>
+
+<div class = "container">
+    <div class = "center">
+        <body>
+            <h1>Time Check:</h1>
+            <h3>To see time information for a shift, type:</h3>
+                <p>1 - for first shift</p>
+                <p>2 - for second shift</p>
+                <p>3 - for third shift</p>
+            <h4>
+                <form action="{{ url_for("index")}}" method="post">
+                <label for="shiftname">Shift:</label>
+                <input type="text" id="shift" name="fname" placeholder="Enter Shift">
+                <button type="submit" id="more">Enter</button>
+            </h4>
+        <!-- this section can be replaced by a child document -->  
+        {% block body %}
+        
+        
+        <p>{{ the_body }}</p>
+        
+        
+        {% endblock %}
+        
+        
+        </body>
+    </div>
+</div>
  
 </html>
