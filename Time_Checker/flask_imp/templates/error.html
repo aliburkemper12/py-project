@@ -15,10 +15,10 @@
                 <p>2 - for second shift</p>
                 <p>3 - for third shift</p>
             <h4>
-                <form action="{{ url_for("index")}}" method="post">
+                {% comment %} <form action="{{ url_for("index")}}" method="get">
                 <label for="shiftname">Shift:</label>
                 <input type="text" id="shift" name="fname" placeholder="Enter Shift">
-                <button type="submit" id="more">Enter</button>
+                <button type="submit" id="more">Enter</button> {% endcomment %}
             </h4>
             <h2>Invalid shift. Please try again.</h2>
         <!-- this section can be replaced by a child document -->  

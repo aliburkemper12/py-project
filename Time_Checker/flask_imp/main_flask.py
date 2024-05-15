@@ -20,7 +20,7 @@ def index():
         get_time = time_check_flask.get_time()
         
         return render_template("return.html", shiftname=convert_name, shift_info=time_data, curr_time=get_time, percentage=percentage)
-    return render_template("index.html")
+    return render_template("index.html", error="")
 
 def generate(send_data):
     result = {}

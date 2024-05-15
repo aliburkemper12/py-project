@@ -178,7 +178,7 @@ def get_shift_name(shift):
         return 'Third'
     
     else:
-        return render_template("error.html")
+        return -1
     
 # sets the appropriate hours depending on inputted shift
 def set_variables(shift):
