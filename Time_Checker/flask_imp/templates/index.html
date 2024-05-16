@@ -7,31 +7,30 @@
 </head>
 
 <div class = "container">
-    <div class = "center">
-        <body>
-            <h1>Time <a class = "check">Check:</a></h1>
-            <h3 class = "info">To see time information for a shift, type:</h3>
-                <p>1 - for first shift</p>
-                <p>2 - for second shift</p>
-                <p>3 - for third shift</p>
-                <p class = "error">{{ error }}</p>
-            <h4>
-                <form action="{{ url_for("index")}}" method="post">
-                <input type="text" id="shift" name="fname" placeholder="Enter Shift">
-                <button type="submit" id="more">Enter</button>
-            </h4>
-        <!-- this section can be replaced by a child document -->  
-        {% block body %}
-        
-        
-        <p>{{ the_body }}</p>
-        
-        
-        {% endblock %}
-        
-        
-        </body>
-    </div>
+        <div class = "center">
+            <body>
+                <h1>Time <a class = "check">Check:</a></h1>
+                <h3 class = "info">To see time information for a shift, type:</h3>
+                    <p>1 - for first shift</p>
+                    <p>2 - for second shift</p>
+                    <p>3 - for third shift</p>
+                    <p class = "error">{{ error }}</p>
+                <h4>
+                    <form action="{{ url_for("index")}}" method="post">
+                    <input type="text" id="shift" name="fname" placeholder="Enter Shift">
+                    <button type="submit" id="more">Enter</button>
+                </h4>
+            <!-- this section can be replaced by a child document -->  
+            {% block body %}
+            
+            <p>{{ the_body }}</p>
+            
+            {% endblock %}
+
+            </body>
+        </div>
 </div>
+
+<h5 class = "footer">&copy TC by Ali Burkemper</h5>
  
 </html>
