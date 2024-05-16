@@ -2,6 +2,8 @@ import time_check_flask
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
+
+convert_name = 0
     
 #need to get what shift to display, then call do_time_check(shift)
 #return a string to be put into the html index
@@ -11,6 +13,9 @@ def index():
         
         send_data = request.form.get("fname")
         convert_name = time_check_flask.get_shift_name(send_data)
+        
+        if convert_name == -1:
+            return render_template("index.html", error="Invalid input")
         
         total_data = generate(send_data)
         

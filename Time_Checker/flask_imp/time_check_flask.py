@@ -25,7 +25,7 @@ def do_time_check(shift):
     set_variables(shift)
 
     # check if time is before first break, second break, or clock out
-    if time.hour < first_break_hour and time.hour >= start_hour:
+    if time.hour <= first_break_hour and time.minute < 54 and time.hour > start_hour or (time.hour == start_hour and time.minute > 30):
         var = first_break_hour - time.hour
         var_minutes = 54 - time.minute
         
@@ -36,7 +36,7 @@ def do_time_check(shift):
         data = print_minutes(var_minutes, var, 'first break')
             
     # it is first break
-    elif time.hour == first_break_hour and time.minute < 10:
+    elif time.hour == first_break_hour and time.minute > 54 or (time.hour == first_break_hour + 1 and time.minute < 10):
         data = 'It is currently first break'
 
     # after first break before second break
@@ -152,7 +152,7 @@ def do_time_check(shift):
         curr_minutes = (curr_minutes / total_minutes) * 100
         curr_minutes = round(curr_minutes, 2)
         
-        percent = ' You are ' + str(curr_minutes) + '% through the day' 
+        percent = 'You are ' + str(curr_minutes) + '%' + ' through the day'
     
     total = [data, percent]
     return total
