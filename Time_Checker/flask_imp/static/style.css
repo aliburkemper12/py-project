@@ -4,6 +4,7 @@ html {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
+    position: relative;
 }
 body {
     text-align: center;
@@ -14,9 +15,10 @@ body {
     text-align: center;
     vertical-align: middle;
     background: linear-gradient(-45deg, #24147e, #1e135d, #3e2166, #216993);
-    height: 100vh;
+    height: 96%;
     margin: 0;
-    padding: 0;
+    /* padding: 0; */
+    padding-top: 2%;
     width: 100%;
 }
 .body {
@@ -47,10 +49,15 @@ p {
     text-align: right;
     color: #6e6d71;
     padding-top: 10px;
-    padding-bottom: 50px;
+    padding-bottom: 15px;
     padding-right: 15px;
-    vertical-align: bottom;
-    height: max-content;
+    /* vertical-align: bottom; */
+    background: linear-gradient(-45deg, #24147e, #1e135d, #3e2166, #4f1283);
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
 }
 p:hover {
     translate: 0px -3px;
@@ -128,7 +135,7 @@ button {
     position: relative;
     background-color: #1e164e;
     box-shadow: 4px 4px 25px #151414;
-    margin-top: 3%;
+    /* margin-top: 3%; */
     margin-bottom: 50px;
     margin-left: 17%;
     margin-right: 17%;
