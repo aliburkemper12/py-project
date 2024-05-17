@@ -178,6 +178,7 @@ button {
 .blocks:hover {
     transform: scale(1.04);
     box-shadow: 0px 0px 7px 7px#aa334b;
+    background: #1b1743;
 }
 .blocks div h3 {
     padding-bottom: 5%;
