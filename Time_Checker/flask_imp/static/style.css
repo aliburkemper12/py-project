@@ -171,6 +171,10 @@ button {
     padding-bottom: 3%;
     transition-duration: .5s;
 }
+.box_container {
+    align-items: center;
+    justify-content: center;
+}
 .blocks:hover {
     transform: scale(1.04);
     box-shadow: 0px 0px 7px 7px#aa334b;
