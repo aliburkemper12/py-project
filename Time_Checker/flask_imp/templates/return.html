@@ -12,7 +12,7 @@
             <h1>Time <a class = "check">Check</a> for {{ shiftname }} Shift</h1>
             <h4>{{ shift_info }}</h4>
             <h4>{{ percentage }}</h4>
-            <h3 class = "time">{{ curr_time }}</h3>
+            <h3 id = "clock" class="time">{{ curr_time }}</h3>
             <h3>
                 <form action="{{ url_for("index")}}" method="get">
                 <button type="back" id="back">Back</button>

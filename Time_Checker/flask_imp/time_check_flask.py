@@ -25,7 +25,7 @@ def do_time_check(shift):
     set_variables(shift)
 
     # check if time is before first break, second break, or clock out
-    if time.hour <= first_break_hour and time.minute < 54 and time.hour > start_hour or (time.hour == start_hour and time.minute > 30):
+    if time.hour < first_break_hour and time.hour > start_hour or (time.hour == start_hour and time.minute > 30) or (time.hour == first_break_hour and time.minute < 54):
         var = first_break_hour - time.hour
         var_minutes = 54 - time.minute
         
