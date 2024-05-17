@@ -4,6 +4,7 @@
 <head>
     <title>TimeCheck</title>
     <link rel="stylesheet" type="text/css" href="static/style.css">
+   <!--<meta http-equiv="refresh" content="30"> -->
 </head>
  
 <div class = "container">
@@ -22,7 +23,13 @@
         
         
         {% endblock %}
-        
+        <script> setTimeout(
+            function() {
+                window.location.reload(1);
+            },
+            30000,
+        );
+        </script>
         
         </body>
     </div>

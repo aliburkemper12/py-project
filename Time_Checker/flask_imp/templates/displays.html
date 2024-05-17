@@ -32,6 +32,13 @@
                     <form action="{{ url_for("index")}}" method="get">
                     <button type="back" id="back">Back</button>
                 </h3>
+                <script> setTimeout(
+                    function() {
+                        window.location.reload(1);
+                    },
+                    20000,
+                );
+                </script>
             </body>
         </div>
     </div>

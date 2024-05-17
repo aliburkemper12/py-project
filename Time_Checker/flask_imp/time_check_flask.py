@@ -163,7 +163,7 @@ def get_time():
     x = pytz.timezone("America/Chicago")
     time = datetime.now(x)
     
-    time = time.strftime('%H:%M:%S')
+    time = time.strftime('%H:%M')
     return str(time)
     
 # change shift integer to string for display purposes
