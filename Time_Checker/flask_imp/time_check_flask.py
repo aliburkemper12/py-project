@@ -163,7 +163,10 @@ def get_time():
     x = pytz.timezone("America/Chicago")
     time = datetime.now(x)
     
-    time = time.strftime('%H:%M')
+    time_hour = time.hour
+    if time_hour > 12:
+        time_hour = time_hour - 12
+    time = str(time_hour) + time.strftime(':%M')
     return str(time)
     
 # change shift integer to string for display purposes
