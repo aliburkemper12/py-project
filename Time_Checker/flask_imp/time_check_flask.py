@@ -224,12 +224,16 @@ def print_minutes(var_minutes, var_hours, period):
     if var_minutes == 1:
         if var_hours == 0:
             result = result + 'It is ' + str(var_minutes) + ' minute until ' + str(period)
+        elif var_hours == 1:
+            result = result + 'It is ' + str(var_hours) + ' hour and ' + str(var_minutes) + ' minute until ' + str(period)
         else:
             result = result + 'It is ' + str(var_hours) + ' hours and ' + str(var_minutes) + ' minute until ' + str(period)
 
     else:
         if var_hours == 0:
             result = result + 'It is ' + str(var_minutes) + ' minutes until ' + str(period)
+        elif var_hours == 1:
+            result = result + 'It is ' + str(var_hours) + ' hour and ' + str(var_minutes) + ' minutes until ' + str(period)
         else:
             result = result + 'It is ' + str(var_hours) + ' hours and ' + str(var_minutes) + ' minutes until ' + str(period)
     return result
