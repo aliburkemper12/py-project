@@ -11,33 +11,54 @@
                     <div class = "box_container" style = "display:flex">
                         <div class = "blocks" style = "margin-right:2%">
                             <div><h3>First</h3></div>
-                            <div><p>{{ shift_info_1 }}</p></div>
-                            <div><p>{{ percentage_1 }}</p></div>
+                            <div><p id = "shift_1">{{ shift_info_1 }}</p></div>
+                            <div><p id = "percent_1">{{ percentage_1 }}</p></div>
                         </div>
                         <div class = "blocks" style = "margin-right:2%">
                             <div><h3>Second</h3></div>
-                            <div><p>{{ shift_info_2 }}</p></div>
-                            <div><p>{{ percentage_2 }}</p></div>
+                            <div><p id = "shift_2">{{ shift_info_2 }}</p></div>
+                            <div><p id = "percent_2">{{ percentage_2 }}</p></div>
                         </div>
                         <div class = "blocks">
                             <div><h3>Third</h3></div>
-                            <div><p>{{ shift_info_3 }}</p></div>
-                            <div><p>{{ percentage_3 }}</p></div>
+                            <div><p id = "shift_3">{{ shift_info_3 }}</p></div>
+                            <div><p id = "percent_3">{{ percentage_3 }}</p></div>
                         </div>
                     </div>
                 <div>
-                    <h3 id = "clock" class="time">{{ curr_time }}</h3>
+                    <h3 id = "clock" class="time"></h3>
                 </div>
                 <h3>
                     <form action="{{ url_for("index")}}" method="get">
                     <button type="back" id="back">Back</button>
                 </h3>
-                <script> setTimeout(
+                <!--<script> setTimeout(
                     function() {
                         window.location.reload(1);
                     },
                     10000,
                 );
+                </script> -->
+                <script> 
+                    function fetchData() {
+                        // Make AJAX request to /data route
+                        fetch('/ajax_displays')
+                            .then(response => response.json())
+                            .then(data => {
+                                // Update the data-container with the response
+                                document.getElementById('shift_1').innerText = data.shift_info_1;
+                                document.getElementById('percent_1').innerText = data.percentage_1;
+                                document.getElementById('shift_2').innerText = data.shift_info_2;
+                                document.getElementById('percent_2').innerText = data.percentage_2;
+                                document.getElementById('shift_3').innerText = data.shift_info_3;
+                                document.getElementById('percent_3').innerText = data.percentage_3;
+
+                                document.getElementById('clock').innerText = data.curr_time;
+                            })
+                            .catch(error => console.error('Error:', error));
+                    }
+                    fetchData();
+                    setInterval(fetchData, 10000);
                 </script>
             </body>
         </div>

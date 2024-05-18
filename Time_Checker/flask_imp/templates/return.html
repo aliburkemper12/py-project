@@ -11,24 +11,29 @@
     <div class = "center">
         <body>
             <h1>Time <a class = "check">Check</a> for {{ shiftname }} Shift</h1>
-            <h4>{{ shift_info }}</h4>
-            <h4>{{ percentage }}</h4>
+            <h4 id = "shift_info"></h4>
+            <h4 id = "percent">{{ percentage }}</h4>
             <h3 id = "clock" class="time">{{ curr_time }}</h3>
             <h3>
                 <form action="{{ url_for("index")}}" method="get">
                 <button type="back" id="back">Back</button>
             </h3>
-        <!-- this section can be replaced by a child document -->  
-        {% block body %}
-        
-        
-        {% endblock %}
-        <script> setTimeout(
-            function() {
-                window.location.reload(1);
-            },
-            10000,
-        );
+        <script> 
+            function fetchData() {
+                // Make AJAX request to /data route
+                fetch('/ajax_return')
+                    .then(response => response.json())
+                    .then(data => {
+                        // Update the data-container with the response
+                        document.getElementById('shift_info').innerText = data.shift_info;
+                        document.getElementById('percent').innerText = data.percentage;
+
+                        document.getElementById('clock').innerText = data.curr_time;
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
+            fetchData();
+            setInterval(fetchData, 10000);
         </script>
         
         </body>
