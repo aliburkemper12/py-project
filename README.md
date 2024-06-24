@@ -63,7 +63,7 @@ This project is hosted PythonAnywhere
 <!-- CONTACT -->
 ## Contact
 
-Your Name  - aliburkemper12@gmail.com
+Ali Burkemper  - aliburkemper12@gmail.com
 
 Project Link: [https://github.com/aliburkemper12/time-checker](https://github.com/aliburkemper12/time-checker)
 
