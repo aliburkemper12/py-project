@@ -37,7 +37,7 @@
 ## About The Project
 
 
-This project was created for employees to be able to quickly check how much time is left in their shift until the next <b>milestone</b>(Either the next break, clock out, or clock in).
+This project was created for employees to be able to quickly check how much time is left in their shift until the next <b>milestone</b> (Either the next break, clock out, or clock in).
 </br>
 <br />
 The project features a clean design that users can navigate to display time information for a single shift, or all shifts.
