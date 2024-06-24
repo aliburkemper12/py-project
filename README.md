@@ -39,10 +39,13 @@
 
 This project was created for employees to be able to quickly check how much time is left in their shift until the next <b>milestone</b>(Either the next break, clock out, or clock in).
 </br>
+<br />
 The project features a clean design that users can navigate to display time information for a single shift, or all shifts.
 </br>
+<br />
 The display screens features the current amount of time left till the next milestone, the percentage of the work day done, and the current time. It updates using AJAX calls every 30 seconds. :smile:
-
+<br />
+<br />
 This project is hosted PythonAnywhere
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
