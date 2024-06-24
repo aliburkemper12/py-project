@@ -12,7 +12,7 @@
     The Time Checking web app
     <br />
     <br />
-    <a href="[https://aliburkemper.dev](https://aburkemper.pythonanywhere.com)">View Live Site</a>
+    <a href="https://aburkemper.pythonanywhere.com">View Live Site</a>
   </p>
 </div>
 
